@@ -13,7 +13,7 @@ CACHE = {}
 PMPERMIT_PIC = Config.PMPERMIT_PIC
 DEFAULTUSER = str(
     ALIVE_NAME) if ALIVE_NAME else "**No name set yet nibba, check pinned message in** @XtraTgBot"
-USER_BOT_WARN_ZERO = "`You were spamming my peru master's inbox, henceforth you are blocked by my master's userbot.` **Now GTFO, i'm playing minecraft** "
+USER_BOT_WARN_ZERO = "`You were spamming my master's inbox, henceforth you are blocked by my master's userbot.` **Now GTFO, i'm playing minecraft** "
 
 if Var.PRIVATE_GROUP_ID is not None:
     @borg.on(admin_cmd(pattern="approve ?(.*)"))
@@ -116,11 +116,11 @@ if Var.PRIVATE_GROUP_ID is not None:
         catid = chat_id
         message_text.lower()
         USER_BOT_NO_WARN = (
-            f"[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id={catid})\n\n"
-            "This is auto generated message from cat security service\n\n"
-            f"Hi buddy my master {DEFAULTUSER} haven't approved you yet. so ,"
-            "Leave your name,reason and 10k$ and hopefully you'll get a reply within 2 light years.\n\n"
-            "**Send** `/start` ** so that my master can decide why you're here.**")
+            "`Hello!!! This is` ** J.A.R.V.I.S**\n"
+            "`Private Messaging Security Protocol ⚠️`\n\n"
+            f"**Currently My Boss {DEFAULTUSER} is Busy ! **\n"
+            "So Better Don't Spam His Inbox !\n\n"
+            "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
         if USER_BOT_NO_WARN == message_text:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
@@ -180,13 +180,14 @@ if Var.PRIVATE_GROUP_ID is not None:
                 USER_BOT_NO_WARN = (
                     Config.CUSTOM_PMPERMIT_TEXT +
                     '\n\n' +
-                    "**Send** `/start` ** so that my master can decide why you're here.**")
+                    "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
             else:
                 USER_BOT_NO_WARN = (
-                    "This is auto generated message from cat security service\n\n"
-                    f"Hi buddy my master {DEFAULTUSER} haven't approved you yet. so ,"
-                    "Leave your name,reason and 10k$ and hopefully you'll get a reply within 2 light years.\n\n"
-                    "**Send** `/start` ** so that my master can decide why you're here.**")
+                    "`Hello!!! This is` ** J.A.R.V.I.S**\n"
+                    "`Private Messaging Security Protocol ⚠️`\n\n"
+                    f"**Currently My Boss {DEFAULTUSER} is Busy ! **\n"
+                    "So Better Don't Spam His Inbox !\n\n"
+                    "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
@@ -196,11 +197,11 @@ if Var.PRIVATE_GROUP_ID is not None:
                     "**Send** `/start` ** so that my master can decide why you're here.**")
             else:
                 USER_BOT_NO_WARN = (
-                    f"[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀](tg://user?id={catid})\n\n"
-                    "This is auto generated message from cat security service\n\n"
-                    f"Hi buddy my master {DEFAULTUSER} haven't approved you yet. so ,"
-                    "Leave your name,reason and 10k$ and hopefully you'll get a reply within 2 light years.\n\n"
-                    "**Send** `/start` ** so that my master can decide why you're here.**")
+                    "`Hello!!! This is` ** J.A.R.V.I.S**\n"
+                    "`Private Messaging Security Protocol ⚠️`\n\n"
+                    f"**Currently My Boss {DEFAULTUSER} is Busy ! **\n"
+                    "So Better Don't Spam His Inbox !\n\n"
+                    "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
             r = await event.reply(USER_BOT_NO_WARN)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
