@@ -79,7 +79,12 @@
     },
     "ALIVE_PIC": {
       "description": "the pic that to show in your alive message url.",
-      "value": "",
+      "value": "https://telegra.ph/file/99059c3ea339edf9e9d81.mp4",
+      "required": false
+    },
+    "PMPERMIT_PIC": {
+      "description": "the pic that to show in your alive message url.",
+      "value": "https://telegra.ph/file/99059c3ea339edf9e9d81.mp4",
       "required": false
     },
     "AUTONAME": {
@@ -104,7 +109,7 @@
     },
     "TZ": {
       "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-      "value": "Asia/Kolkata",
+      "value": "Asia/Colombo",
       "required": false
     }
   },
