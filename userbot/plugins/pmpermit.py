@@ -120,7 +120,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             "`Private Messaging Security Protocol ⚠️`\n\n"
             f"**Currently My Boss {DEFAULTUSER} is Busy ! **\n"
             "So Better Don't Spam His Inbox !\n\n"
-            "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
+            "**Send** 🍁 `/start` 🍁 ** so that my boss can decide why you're here.**")
         if USER_BOT_NO_WARN == message_text:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
@@ -180,28 +180,28 @@ if Var.PRIVATE_GROUP_ID is not None:
                 USER_BOT_NO_WARN = (
                     Config.CUSTOM_PMPERMIT_TEXT +
                     '\n\n' +
-                    "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
+                    "**Send** 🍁 `/start` 🍁 ** so that my boss can decide why you're here.**")
             else:
                 USER_BOT_NO_WARN = (
                     "`Hello!!! This is` ** J.A.R.V.I.S**\n"
                     "`Private Messaging Security Protocol ⚠️`\n\n"
                     f"**Currently My Boss {DEFAULTUSER} is Busy ! **\n"
                     "So Better Don't Spam His Inbox !\n\n"
-                    "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
+                    "**Send** 🍁 `/start` 🍁 ** so that my boss can decide why you're here.**")
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
                 USER_BOT_NO_WARN = (
                     Config.CUSTOM_PMPERMIT_TEXT +
                     '\n\n' +
-                    "**Send** `/start` ** so that my master can decide why you're here.**")
+                    "**Send** 🍁 `/start` 🍁 ** so that my boss can decide why you're here.**")
             else:
                 USER_BOT_NO_WARN = (
                     "`Hello!!! This is` ** J.A.R.V.I.S**\n"
                     "`Private Messaging Security Protocol ⚠️`\n\n"
                     f"**Currently My Boss {DEFAULTUSER} is Busy ! **\n"
                     "So Better Don't Spam His Inbox !\n\n"
-                    "**Send** 🍁 `/start` 🍁 ** so that my master can decide why you're here.**")
+                    "**Send** 🍁 `/start` 🍁 ** so that my boss can decide why you're here.**")
             r = await event.reply(USER_BOT_NO_WARN)
         PM_WARNS[chat_id] += 1
         if chat_id in PREV_REPLY_MESSAGE:
