@@ -31,7 +31,7 @@ async def amireallyalive(alive):
         cat_caption += f"**✧ Catuserbot Version :** `{catversion}`\n"
         cat_caption += f"**✧ Python Version :** `{python_version()}\n`"
         cat_caption += f"**✧ Uptime :** `{uptime}\n`"
-        cat_caption += f"**✧ My peru Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
+        cat_caption += f"**✧ My Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
         await borg.send_file(alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id)
         await alive.delete()
     else:
@@ -41,7 +41,7 @@ async def amireallyalive(alive):
                             f"**✧ Catuserbot Version :** `{catversion}`\n"
                             f"**✧ Python Version :** `{python_version()}\n`"
                             f"**✧ Uptime :** `{uptime}\n`"
-                            f"**✧ My Peru Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
+                            f"**✧ My Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
                             )
 
 
@@ -59,7 +59,7 @@ async def amireallyalive(alive):
     cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
     cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
     cat_caption += f"**  -Python Version :** `{python_version()}\n`"
-    cat_caption += f"**  -My peru Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
+    cat_caption += f"**  -My Master:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
     results = await bot.inline_query(  # pylint:disable=E0602
         tgbotusername,
         cat_caption
