@@ -11,10 +11,10 @@ from userbot import CMD_HELP
 
 @borg.on(admin_cmd("md ?(.*)"))
 async def _(event):
-    print(event)
     if event.fwd_from:
         return
     d_link = event.pattern_match.group(1)
+    reply_id = event.reply_to_msg_id
     await event.edit("🎶**Initiating Download!**🎶")
 
     async with borg.conversation("@vkmusic_bot") as conv:
@@ -33,7 +33,7 @@ async def _(event):
                 # await borg.send_message(event.chat_id, songh)
 
                 songh = await conv.get_response()
-                await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆")
+                await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆", reply_to=reply_id)
                 await event.delete()
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @vkmusic_bot `and retry!`")
