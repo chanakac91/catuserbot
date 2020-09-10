@@ -24,15 +24,13 @@ async def _(event):
             await conv.send_message(d_link)
             details = await conv.get_response()
 
-            print(details)
-            
             if details.message == "I found nothing 😔":
                 await event.edit(details.message)
             else:
                 await details.click(0)
                 songh = await conv.get_response()
+                # await event.delete()
                 await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆", reply_to=reply_to_id)
-                await event.delete()
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @vkmusic_bot `and retry!`")
 
