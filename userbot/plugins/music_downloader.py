@@ -15,6 +15,7 @@ async def _(event):
         return
     d_link = event.pattern_match.group(1)
     event_2 = await edit_or_reply(event, "🎶**Initiating Download!**🎶")
+    print(event_2)
     reply_to_id = event_2.message.id
     # await event.edit("🎶**Initiating Download!**🎶")
 
