@@ -30,7 +30,7 @@ async def _(event):
                 # await event.edit("🔆**Here's the requested song!**🔆")
                 songh = await conv.get_response()
                 # await borg.send_message(event.chat_id, songh)
-                await event.edit(songh, caption="🔆**Here's the requested song!**🔆")
+                await event.edit(songh+"\n🔆**Here's the requested song!**🔆")
 
                 # songh = await conv.get_response()
                 # await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆")
