@@ -11,6 +11,7 @@ from userbot import CMD_HELP
 
 @borg.on(admin_cmd("md ?(.*)"))
 async def _(event):
+    print(event)
     if event.fwd_from:
         return
     d_link = event.pattern_match.group(1)
@@ -28,13 +29,12 @@ async def _(event):
             else:
                 await details.click(0)
                 # await event.edit("🔆**Here's the requested song!**🔆")
-                songh = await conv.get_response()
-                # await borg.send_message(event.chat_id, songh)
-                await event.edit(songh+"\n🔆**Here's the requested song!**🔆")
-
                 # songh = await conv.get_response()
-                # await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆")
-                # await event.delete()
+                # await borg.send_message(event.chat_id, songh)
+
+                songh = await conv.get_response()
+                await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆")
+                await event.delete()
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @vkmusic_bot `and retry!`")
 
