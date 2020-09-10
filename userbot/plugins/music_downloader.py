@@ -28,10 +28,6 @@ async def _(event):
                 await event.edit(details.message)
             else:
                 await details.click(0)
-                # await event.edit("🔆**Here's the requested song!**🔆")
-                # songh = await conv.get_response()
-                # await borg.send_message(event.chat_id, songh)
-
                 songh = await conv.get_response()
                 await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆", reply_to=reply_id)
                 await event.delete()
@@ -41,7 +37,8 @@ async def _(event):
 CMD_HELP.update({
     "music_downloader": "**Plugin :**`music_downloader`\
      \n\nDownload Music \
-     \n**Syntax :** `.md song title `\
+     \n**Version :** `1.1.0`\
+     \n**Syntax :** `.md song title`\
      \n**Usage :** will download your requested song\
 "
 })
