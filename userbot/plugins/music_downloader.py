@@ -14,6 +14,7 @@ async def _(event):
     if event.fwd_from:
         return
     d_link = event.pattern_match.group(1)
+    reply_to_id = event.message.id
     await event.edit("🎶**Initiating Download!**🎶")
 
     async with borg.conversation("@vkmusic_bot") as conv:
@@ -23,16 +24,14 @@ async def _(event):
             await conv.send_message(d_link)
             details = await conv.get_response()
 
+            print(details)
+            
             if details.message == "I found nothing 😔":
                 await event.edit(details.message)
             else:
                 await details.click(0)
-                # await event.edit("🔆**Here's the requested song!**🔆")
-                # songh = await conv.get_response()
-                # await borg.send_message(event.chat_id, songh)
-
                 songh = await conv.get_response()
-                await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆")
+                await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆", reply_to=reply_to_id)
                 await event.delete()
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @vkmusic_bot `and retry!`")
