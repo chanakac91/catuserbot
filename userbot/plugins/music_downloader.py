@@ -5,7 +5,7 @@ idea from @PRAVEEN_KAVINDU
 import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from userbot.utils import admin_cmd
+from userbot.utils import admin_cmd, edit_or_reply
 from userbot import CMD_HELP
 
 
@@ -14,8 +14,9 @@ async def _(event):
     if event.fwd_from:
         return
     d_link = event.pattern_match.group(1)
-    reply_to_id = event.message.id
-    await event.edit("🎶**Initiating Download!**🎶")
+    event_2 = await edit_or_reply(event, "🎶**Initiating Download!**🎶")
+    reply_to_id = event_2.message.id
+    # await event.edit("🎶**Initiating Download!**🎶")
 
     async with borg.conversation("@vkmusic_bot") as conv:
         try:
