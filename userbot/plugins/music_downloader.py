@@ -5,7 +5,7 @@ idea from @PRAVEEN_KAVINDU
 import asyncio
 from telethon.errors.rpcerrorlist import YouBlockedUserError, UserAlreadyParticipantError
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from userbot.utils import admin_cmd, edit_or_reply
+from userbot.utils import admin_cmd
 from userbot import CMD_HELP
 
 
@@ -14,10 +14,7 @@ async def _(event):
     if event.fwd_from:
         return
     d_link = event.pattern_match.group(1)
-    event_2 = await edit_or_reply(event, "🎶**Initiating Download!**🎶")
-    print(event_2)
-    reply_to_id = event_2.message.id
-    # await event.edit("🎶**Initiating Download!**🎶")
+    await event.edit("🎶**Initiating Download!**🎶")
 
     async with borg.conversation("@vkmusic_bot") as conv:
         try:
@@ -30,9 +27,14 @@ async def _(event):
                 await event.edit(details.message)
             else:
                 await details.click(0)
+                # await event.edit("🔆**Here's the requested song!**🔆")
                 songh = await conv.get_response()
+                # await borg.send_message(event.chat_id, songh)
+                await event.edit(songh, caption="🔆**Here's the requested song!**🔆")
+
+                # songh = await conv.get_response()
+                # await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆")
                 # await event.delete()
-                await borg.send_file(event.chat_id, songh, caption="🔆**Here's the requested song!**🔆", reply_to=reply_to_id)
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @vkmusic_bot `and retry!`")
 
