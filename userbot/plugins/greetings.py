@@ -12,7 +12,7 @@ async def gmg(event):
 
 @borg.on(admin_cmd(pattern="gm$"))
 async def gm(event):
-    await event.edit("**☆❋──❃ ɢ∞פ ʍօ®ɴɪɴɢ ❃──❋☆**")
+    await event.edit("**☆❋──❃ ɢ∞פ  ʍօ®ɴɪɴɢ ❃──❋☆**")
 
 @borg.on(admin_cmd(pattern="gn$"))
 async def gn(event):
