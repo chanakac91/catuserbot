@@ -46,7 +46,7 @@ async def log(log_text):
 @borg.on(admin_cmd(outgoing=True, pattern="kickme$"))
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit("එහෙනම් කොල්ලො, අපි ගියා 🖐")
+    await leave.edit("tt")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
